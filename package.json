@@ -1,0 +1,17 @@
+{
+  "name": "tiny-ipv4-packet",
+  "version": "0.1.0",
+  "description": "Parses raw IPv4 packet buffers into header fields including protocol, addresses, and payload offset.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
