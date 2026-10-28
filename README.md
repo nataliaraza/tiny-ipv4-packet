@@ -46,3 +46,10 @@ If the buffer is longer than the datagram's `totalLength` (common when a capture
 - `formatIPv4(bytes: Uint8Array): string` — format 4 bytes as dotted-quad.
 - `IPv4Packet` — the class returned by `parseIPv4`; see source for all fields.
 - `MIN_HEADER_LENGTH` (20), `MIN_IHL` (5), `MAX_IHL` (15) — constants.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
